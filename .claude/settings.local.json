@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --src-dir --import-alias \"@/*\" --no-eslint --no-git)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --src-dir --import-alias \"@/*\" --no-eslint --no-git --use-npm)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(not exist *)",
+      "PowerShell(New-Item *)",
+      "PowerShell(npx ts-node --version 2>&1)"
+    ]
+  }
+}
