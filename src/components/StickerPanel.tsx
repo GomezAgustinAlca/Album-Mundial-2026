@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { stickers } from "@/data/stickers";
 import { pages } from "@/data/stickers";
 import StickerCard from "./StickerCard";
@@ -17,11 +17,16 @@ interface Props {
   placed: Record<string, string>;
   selectedStickerId: string | null;
   onSelectSticker: (id: string) => void;
+  autoCountry?: string;
 }
 
-export default function StickerPanel({ placed, selectedStickerId, onSelectSticker }: Props) {
+export default function StickerPanel({ placed, selectedStickerId, onSelectSticker, autoCountry }: Props) {
   const [search, setSearch] = useState("");
-  const [country, setCountry] = useState("Todos");
+  const [country, setCountry] = useState(autoCountry ?? "Todos");
+
+  useEffect(() => {
+    if (autoCountry) setCountry(autoCountry);
+  }, [autoCountry]);
   const [category, setCategory] = useState("all");
   const [showPlaced, setShowPlaced] = useState(true);
 

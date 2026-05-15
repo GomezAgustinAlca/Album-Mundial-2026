@@ -156,6 +156,7 @@ export default function Album() {
               placed={placed}
               selectedStickerId={selectedStickerId}
               onSelectSticker={handleSelectSticker}
+              autoCountry={page.country}
             />
           </div>
         </main>
